@@ -8,35 +8,29 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// 1. FONDAMENTALE: Serviamo la cartella public per le immagini delle copertine
 app.use(express.static(path.join(__dirname, 'public')));
 
-// 2. CONFIGURAZIONE DATABASE
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'moodread_progetto' // Assicurati che il nome sia corretto
+    database: 'moodread_progetto' 
 });
 
 db.connect(err => {
     if (err) {
-        console.error('❌ Errore connessione DB:', err);
+        console.error(' Errore connessione DB:', err);
     } else {
-        console.log('✅ Database connesso!');
+        console.log(' Database connesso!');
     }
 });
 
-// ==========================================
-// PARTE 1: GESTIONE LIBRI (MODIFICATA PER CASE-INSENSITIVE)
-// ==========================================
 
 app.get('/api/books', (req, res) => {
     const mood = req.query.mood; 
     console.log("Cerco libri per mood:", mood); 
 
-    // MODIFICA FONDAMENTALE:
-    // Usiamo LOWER() per ignorare le maiuscole (es. "divertito" trova "Divertito")
+  
     const sql = "SELECT * FROM libri_biblioterapia WHERE LOWER(emozione_target) = LOWER(?)";
     
     db.query(sql, [mood], (err, result) => {
@@ -49,9 +43,7 @@ app.get('/api/books', (req, res) => {
     });
 });
 
-// ==========================================
-// PARTE 2: GESTIONE UTENTI
-// ==========================================
+//gestione utenti
 
 app.post('/register', (req, res) => {
     const { nome, cognome, birthdate, username, password, email } = req.body;
@@ -86,11 +78,8 @@ app.post('/login', (req, res) => {
     });
 });
 
-// ==========================================
-// PARTE 3: GESTIONE FORUM RECENSIONI
-// ==========================================
+//gestione forum
 
-// LEGGERE TUTTE
 app.get('/api/reviews', (req, res) => {
     const sql = "SELECT * FROM reviews ORDER BY created_at DESC";
     db.query(sql, (err, result) => {
@@ -99,21 +88,20 @@ app.get('/api/reviews', (req, res) => {
     });
 });
 
-// SCRIVERE NUOVA
+
 app.post('/api/reviews', (req, res) => {
     // Nota: Il frontend invia 'bookTitle' e 'text', ma il DB vuole 'book_title' e 'comment'
     const { username, bookTitle, mood, text } = req.body;
     
     const sql = "INSERT INTO reviews (username, book_title, mood, rating, comment) VALUES (?, ?, ?, ?, ?)";
     
-    // Defaultiamo il rating a 5 dato che nel tuo design attuale non c'è lo slider
     db.query(sql, [username, bookTitle, mood, 5, text], (err, result) => {
         if (err) return res.status(500).json(err);
         res.status(200).json({ message: "Recensione salvata!" });
     });
 });
 
-// Avvio del server
+// avvio server
 app.listen(3000, () => {
-    console.log("🚀 Server attivo su http://localhost:3000");
+    console.log("Server attivo");
 });
