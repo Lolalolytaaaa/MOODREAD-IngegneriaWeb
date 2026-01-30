@@ -7,7 +7,7 @@ const router = useRouter();
 const username = ref('');
 const password = ref('');
 
-// Gestione Notifiche
+// gestione notifiche
 const notification = ref({ show: false, message: '', type: 'success' });
 
 const showNotification = (msg: string, type: string) => {
@@ -15,16 +15,15 @@ const showNotification = (msg: string, type: string) => {
   setTimeout(() => { notification.value.show = false }, 3000);
 };
 
-// --- QUESTA È LA FUNZIONE CHE ORA CHIAMA DAVVERO IL SERVER ---
 const handleLogin = async () => {
-  // 1. Controlli base (client-side)
+  // controlli base (client-side)
   if (!username.value || !password.value) {
     showNotification('Inserisci username e password', 'error');
     return;
   }
 
   try {
-    // 2. Chiamata al Server (Backend)
+    // chiamata al server 
     const response = await fetch('http://localhost:3000/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -37,13 +36,10 @@ const handleLogin = async () => {
     const data = await response.json();
 
     if (response.ok) {
-      // 3. FONDAMENTALE: Salviamo l'utente nel LocalStorage del browser!
-      // Senza questa riga, le altre pagine non sapranno mai che sei loggato.
       localStorage.setItem('user', JSON.stringify(data.user)); 
       
       showNotification('Bentornato! Accesso effettuato.', 'success');
 
-      // 4. Reindirizzamento al Forum dopo 1.5 secondi
       setTimeout(() => {
         router.push('/forum'); 
       }, 1500);
