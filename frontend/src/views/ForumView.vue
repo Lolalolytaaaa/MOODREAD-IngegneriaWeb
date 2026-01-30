@@ -3,40 +3,34 @@ import { ref, computed, onMounted } from 'vue';
 import { useRouter } from 'vue-router';
 
 const router = useRouter();
-
-// Variabile fondamentale: Sei loggato?
 const isLoggedIn = ref(false);
 
-// Variabili per il forum
+
 const newReview = ref({ bookTitle: '', text: '', mood: 'Felice' });
 const reviews = ref([]); 
 const moods = ['Tutti', 'Felice', 'Carico', 'Triste', 'Arrabbiato', 'Divertito', 'Annoiato', 'Ansioso', 'Innamorato'];
 const selectedMood = ref('Tutti');
 const showWriteInput = ref(false);
 
-// Funzione per andare al login
+
 const goToLogin = () => {
   router.push('/login');
 };
 
-// --- CONTROLLO LOGIN E CARICAMENTO ---
+
 onMounted(() => {
-  // 1. Cerchiamo l'utente salvato dal LoginView
   const userStored = localStorage.getItem('user');
   
   if (userStored) {
-    // Se c'è, sblocchiamo tutto!
     isLoggedIn.value = true;
-    fetchReviews(); // Scarichiamo le recensioni
+    fetchReviews(); 
   } else {
-    // Se non c'è, blocchiamo tutto
     isLoggedIn.value = false;
-    // (Opzionale) Scarichiamo comunque le recensioni per farle vedere sfocate sullo sfondo
     fetchReviews(); 
   }
 });
 
-// --- API FETCH RECENSIONI ---
+
 const fetchReviews = async () => {
   try {
     const response = await fetch('http://localhost:3000/api/reviews');
@@ -53,7 +47,6 @@ const fetchReviews = async () => {
   }
 };
 
-// --- API INVIA RECENSIONE ---
 const submitReview = async () => {
   let currentUser = "Anonimo";
   const storedUser = localStorage.getItem('user');
