@@ -69,7 +69,6 @@ defineProps({
   }
 });
 
-// Se l'immagine non si trova, mette un placeholder
 const handleImageError = (e: Event) => {
   const target = e.target as HTMLImageElement;
   target.src = "https://via.placeholder.com/300x450?text=No+Cover";
