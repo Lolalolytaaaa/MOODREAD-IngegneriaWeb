@@ -74,7 +74,7 @@ const submitReview = async () => {
     });
 
     if (res.ok) {
-      alert("Recensione pubblicata! 🎉");
+      alert("Recensione pubblicata!");
       newReview.value.bookTitle = '';
       newReview.value.text = '';
       showWriteInput.value = false;
