@@ -38,3 +38,26 @@ Lo scopo principale del progetto è fornire uno strumento empatico in grado di s
 
 ## Guida all'installazione
 Per eseguire il progetto in locale, segui questi passaggi:
+
+1. **Clona la repository**
+   Apri il terminale nella cartella desiderata ed esegui:
+   ```bash
+   git clone [https://github.com/Lolalolytaaaa/MOODREAD-IngegneriaWeb.git](https://github.com/Lolalolytaaaa/MOODREAD-IngegneriaWeb.git)
+   Apri la cartella scaricata con Visual Studio Code.
+   Dovresti vedere le cartelle backend, frontend e il file .gitignore.
+
+3. **Configurazione Backend**
+   Apri un nuovo terminale in VS Code (Terminal > New Terminal) ed esegui questi comandi per entrare nella cartella backend, installare le dipendenze e avviare il server:
+   cd backend
+   npm install
+   node index.js
+   Attendi che compaia il messaggio di conferma della connessione al database.
+
+4. **Configurazione Frontend**
+   Senza chiudere il terminale del backend, apri un secondo terminale (+ accanto al terminale attuale) ed esegui questi comandi:
+   cd frontend
+   npm install
+   npm run dev
+
+5. **Avvio**
+   Dopo l'ultimo comando, apparirà un link locale (solitamente http://localhost:5173 o simile). Cliccaci sopra per aprire l'applicazione nel browser.
