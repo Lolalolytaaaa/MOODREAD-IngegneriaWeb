@@ -42,7 +42,7 @@ Lo scopo principale del progetto è fornire uno strumento empatico in grado di s
 ## Documentazione API
 Di seguito sono elencati gli endpoint principali del server, divisi per metodo HTTP.
 
-### GET (Recupero Dati)
+### GET (recupero dati)
 * `/api/books` - Restituisce l'elenco completo dei libri disponibili nel catalogo.
 * `/api/books/:id` - Restituisce i dettagli di un singolo libro specifico.
 * `/api/moods` - Ottiene la lista delle emozioni disponibili per popolare la tabella della Home Page.
@@ -50,7 +50,7 @@ Di seguito sono elencati gli endpoint principali del server, divisi per metodo H
 * `/api/users/profile` - Restituisce i dati del profilo dell'utente loggato.
 * `/api/popular` - Restituisce i libri più amati per la sezione "Vetrina".
 
-### POST (Invio Dati e Creazione)
+### POST (invio dati e creazione)
 * `/api/auth/login` - Gestisce l'accesso utente (verifica email e password).
 * `/api/auth/register` - Registra un nuovo utente nel database.
 * `/api/auth/logout` - Effettua il logout e invalida la sessione.
