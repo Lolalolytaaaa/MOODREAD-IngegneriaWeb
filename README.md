@@ -43,7 +43,7 @@ Per eseguire il progetto in locale, segui questi passaggi:
    Apri il terminale nella cartella desiderata ed esegui:
    ```bash
    git clone [https://github.com/Lolalolytaaaa/MOODREAD-IngegneriaWeb.git](https://github.com/Lolalolytaaaa/MOODREAD-IngegneriaWeb.git)
-
+   ```bash
    Apri la cartella scaricata con Visual Studio Code.
    Dovresti vedere le cartelle backend, frontend e il file .gitignore.
 
@@ -53,7 +53,7 @@ Per eseguire il progetto in locale, segui questi passaggi:
    cd backend
    npm install
    node index.js
-   
+   ```bash
    Attendi che compaia il messaggio di conferma della connessione al database.
 
 5. **Configurazione Frontend**
