@@ -18,11 +18,11 @@ const fetchBooks = async (mood: string) => {
   recommendedBooks.value = [];
 
   try {
-    console.log(`📡 Richiedo libri per: ${mood}`);
+    console.log(`Richiedo libri per: ${mood}`);
     const response = await axios.get(`http://localhost:3000/api/books?mood=${mood}`);
     recommendedBooks.value = response.data;
   } catch (err) {
-    console.error("❌ Errore nel caricamento:", err);
+    console.error("Errore nel caricamento:", err);
     error.value = "Impossibile caricare i libri. Controlla il server.";
   } finally {
     loading.value = false;
