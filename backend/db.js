@@ -5,16 +5,16 @@ require('dotenv').config();
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '', // Metti la tua password se ne hai una
-  database: 'moodread_progetto' // <--- ECCO IL NOME CORRETTO
+  password: '', 
+  database: 'moodread_progetto' 
 });
 
 connection.connect(error => {
   if (error) {
-    console.error("❌ Errore di connessione:", error.message);
+    console.error("Errore di connessione:", error.message);
     return;
   }
-  console.log("✅ Connesso al Database: moodread_progetto");
+  console.log("Connesso al Database: moodread_progetto");
 });
 
 module.exports = connection;
