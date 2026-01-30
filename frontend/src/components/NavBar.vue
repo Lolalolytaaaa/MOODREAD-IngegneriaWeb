@@ -4,26 +4,22 @@ import { useRouter } from 'vue-router';
 
 const router = useRouter();
 const isOpen = ref(false);
-const currentUser = ref<any>(null); // Variabile per salvare i dati dell'utente
+const currentUser = ref<any>(null); 
 
-// Funzione per chiudere il menu
 const closeMenu = () => {
   isOpen.value = false;
 };
 
-// Funzione per aprire/chiudere il menu
 const toggleMenu = () => {
   isOpen.value = !isOpen.value;
   
-  // TRUCCO: Ogni volta che apri il menu, controlliamo se l'utente è loggato!
-  // Così la navbar è sempre aggiornata anche se hai fatto login da poco.
   if (isOpen.value) {
     checkUserStatus();
   }
 };
 
-// Funzione che controlla la memoria del browser
-const checkUserStatus = () => {
+//controlla la memoria del browser
+  const checkUserStatus = () => {
   const userStored = localStorage.getItem('user');
   if (userStored) {
     try {
@@ -36,19 +32,14 @@ const checkUserStatus = () => {
   }
 };
 
-// Funzione LOGOUT
+// logout
 const handleLogout = () => {
-  // 1. Cancelliamo la memoria
   localStorage.removeItem('user');
-  // 2. Aggiorniamo la variabile locale
   currentUser.value = null;
-  // 3. Chiudiamo il menu
   closeMenu();
-  // 4. Portiamo l'utente alla home (o al login)
   router.push('/login');
 };
 
-// Controlliamo anche appena il sito si carica
 onMounted(() => {
   checkUserStatus();
 });
