@@ -53,11 +53,11 @@ Per eseguire il progetto in locale, segui questi passaggi:
    node index.js
    Attendi che compaia il messaggio di conferma della connessione al database.
 
-4. **Configurazione Frontend**
+5. **Configurazione Frontend**
    Senza chiudere il terminale del backend, apri un secondo terminale (+ accanto al terminale attuale) ed esegui questi comandi:
    cd frontend
    npm install
    npm run dev
 
-5. **Avvio**
+6. **Avvio**
    Dopo l'ultimo comando, apparirà un link locale (solitamente http://localhost:5173 o simile). Cliccaci sopra per aprire l'applicazione nel browser.
