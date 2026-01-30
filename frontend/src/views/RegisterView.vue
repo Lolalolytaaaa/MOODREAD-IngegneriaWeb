@@ -8,7 +8,7 @@ const form = ref({
   nome: '',
   cognome: '',
   birthdate: '',
-  email: '',     // <--- NUOVO
+  email: '',    
   username: '',
   password: ''
 });
@@ -127,7 +127,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     filter: invert(1);
     cursor: pointer;
 }
-::placeholder { /* Stile per il placeholder dell'email */
+::placeholder { 
   color: rgba(255, 255, 255, 0.5);
 }
 .fade-enter-active, .fade-leave-active {
