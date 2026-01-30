@@ -48,10 +48,10 @@ Di seguito sono elencati gli endpoint principali del server, divisi per metodo H
 * `/api/moods` - Ottiene la lista delle emozioni disponibili per popolare la tabella della Home Page.
 * `/api/reviews/:bookId` - Legge tutte le recensioni associate a un determinato libro.
 * `/api/users/profile` - Restituisce i dati del profilo dell'utente loggato.
-* `/api/popular` - Restituisce i libri più amati per la sezione "Vetrina".
+* `/api/popular` - Restituisce i libri più amati per la sezione "I più amati".
 
 ### POST (invio dati e creazione)
-* `/api/auth/login` - Gestisce l'accesso utente (verifica email e password).
+* `/api/auth/login` - Gestisce l'accesso utente (verifica username e password).
 * `/api/auth/register` - Registra un nuovo utente nel database.
 * `/api/auth/logout` - Effettua il logout e invalida la sessione.
 * `/api/antidote` - **Core Feature:** Riceve gli input emotivi dell'utente e restituisce i libri "antidoto" filtrati dall'algoritmo.
