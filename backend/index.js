@@ -19,9 +19,9 @@ const db = mysql.createConnection({
 
 db.connect(err => {
     if (err) {
-        console.error(' Errore connessione DB:', err);
+        console.error('Errore connessione DB:', err);
     } else {
-        console.log(' Database connesso!');
+        console.log('Database connesso!');
     }
 });
 
@@ -38,7 +38,7 @@ app.get('/api/books', (req, res) => {
             console.error(err);
             return res.status(500).json({ error: "Errore DB" });
         }
-        console.log("📚 Libri trovati nel DB:", result.length); 
+        console.log("Libri trovati nel DB:", result.length); 
         res.json(result);
     });
 });
@@ -90,7 +90,6 @@ app.get('/api/reviews', (req, res) => {
 
 
 app.post('/api/reviews', (req, res) => {
-    // Nota: Il frontend invia 'bookTitle' e 'text', ma il DB vuole 'book_title' e 'comment'
     const { username, bookTitle, mood, text } = req.body;
     
     const sql = "INSERT INTO reviews (username, book_title, mood, rating, comment) VALUES (?, ?, ?, ?, ?)";
