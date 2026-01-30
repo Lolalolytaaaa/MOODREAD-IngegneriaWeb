@@ -1,4 +1,4 @@
-# Mood Read
+# MOOD READ - Biblioterapia
 
 ## Introduzione
 Mood Read è un'applicazione web client-server progettata per esplorare il concetto di **biblioterapia digitale**. A differenza dei tradizionali cataloghi online che categorizzano i volumi per genere letterario, Mood Read pone al centro l'esperienza emotiva dell'utente.
