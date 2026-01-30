@@ -1,6 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-
-// Assicurati che TUTTI questi file esistano nella cartella 'views'
 import HomeView from '../views/HomeView.vue'
 import MoodSelect from '../views/MoodSelect.vue'
 import LoginView from '../views/LoginView.vue'
