@@ -45,7 +45,6 @@
 </template>
 
 <script setup lang="ts">
-// Definiamo le props (i dati che arrivano da ResultsView)
 defineProps({
   title: {
     type: String,
@@ -76,7 +75,6 @@ const handleImageError = (e: Event) => {
 </script>
 
 <style scoped>
-/* Nasconde la scrollbar estetica ma permette lo scroll */
 .scrollbar-hide::-webkit-scrollbar { display: none; }
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 </style>
