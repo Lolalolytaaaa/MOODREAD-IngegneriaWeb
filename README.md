@@ -31,7 +31,6 @@ Lo scopo principale del progetto è fornire uno strumento empatico in grado di s
 * **Node.js & Express.js:** Architettura REST API.
 * **MySQL2:** Database relazionale.
 * **Sicurezza:** Bcrypt (hashing password) e CORS (sicurezza chiamate frontend-backend).
-* **Dotenv:** Gestione variabili d'ambiente.
 
 ### Design & Prototipazione
 * **Canva & Pinterest:** Prototipazione layout, palette cromatica e moodboard.
