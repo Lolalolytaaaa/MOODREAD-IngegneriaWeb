@@ -26,7 +26,6 @@ Lo scopo principale del progetto è fornire uno strumento empatico in grado di s
 * **Pinia & Vue Router:** Gestione dello stato globale e della navigazione (SPA).
 * **Tailwind CSS & Headless UI:** Per il design responsive e utility-first.
 * **Axios:** Per le chiamate HTTP verso il server.
-* **Librerie UI:** AOS (animazioni allo scroll), SweetAlert2 (popup), Heroicons.
 
 ### Backend (Server)
 * **Node.js & Express.js:** Architettura REST API.
